@@ -1,0 +1,328 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+// Color system
+$prefix: "tw-bib-";
+$prefix: $prefix !default;
+
+$white: #fff !default;
+$gray-100: #f1f5f9 !default;
+$gray-200: #e2e8f0 !default;
+$gray-300: #cbd5e1 !default;
+$gray-400: #94a3b8 !default;
+$gray-500: #64748b !default;
+$gray-600: #475569 !default;
+$gray-700: #334155 !default;
+$gray-800: #1e293b !default;
+$gray-900: #0f172a !default;
+$gray-1000: #0b1324 !default;
+$black: #000 !default;
+
+$grays: () !default;
+$grays: map-merge(
+  (
+    "black": $black,
+    "100": $gray-100,
+    "200": $gray-200,
+    "300": $gray-300,
+    "400": $gray-400,
+    "500": $gray-500,
+    "600": $gray-600,
+    "700": $gray-700,
+    "800": $gray-800,
+    "900": $gray-900,
+    "1000": $gray-1000,
+    "white": $white,
+  ),
+  $grays
+);
+
+$primary: #754ffe !default;
+$secondary: #64748b !default;
+$success: #38a169 !default;
+$info: #0ea5e9 !default;
+$warning: #f59e0b !default;
+$danger: #dc2626 !default;
+$light: $gray-100 !default;
+$dark: $gray-900 !default;
+
+// Light color
+$light-primary: #ede9fe !default; // NEW
+$light-secondary: #e4e3e9 !default; // NEW
+$light-success: #d1f5ea !default; // NEW
+$light-danger: #fad9d8 !default; // NEW
+$light-warning: #ffeeda !default; // NEW
+$light-info: #e1f6ff !default; // NEW
+$light-dark: #d1cfd8 !default; // NEW
+
+// Dark color
+$dark-primary: #593cc1 !default; // NEW
+$dark-secondary: #5c596d !default; // NEW
+$dark-success: #139a74 !default; // NEW
+$dark-danger: #ae302e !default; // NEW
+$dark-warning: #c28135 !default; // NEW
+$dark-info: #51a0c2 !default; // NEW
+$white: $white !default;
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark,
+  "white": $white,
+  "light-primary": $light-primary,
+  "light-danger": $light-danger,
+  "light-info": $light-info,
+  "light-warning": $light-warning,
+  "light-secondary": $light-secondary,
+  "light-success": $light-success,
+  "light-dark": $light-dark,
+  "dark-primary": $dark-primary,
+  "dark-warning": $dark-warning,
+  "dark-info": $dark-info,
+  "dark-danger": $dark-danger,
+  "dark-success": $dark-success,
+  "dark-secondary": $dark-secondary,
+);
+
+// theme soft colors map
+$soft-alpha: 0.3;
+
+$theme-soft-colors: () !default;
+$theme-soft-colors: map-merge(
+  (
+    "white-soft": rgba($white, $soft-alpha),
+    "primary-soft": rgba($primary, $soft-alpha),
+    "secondary-soft": rgba($secondary, $soft-alpha),
+    "success-soft": rgba($success, $soft-alpha),
+    "info-soft": rgba($info, $soft-alpha),
+    "warning-soft": rgba($warning, $soft-alpha),
+    "danger-soft": rgba($danger, $soft-alpha),
+    "light-soft": rgba($light, $soft-alpha),
+    "dark-soft": rgba($dark, $soft-alpha),
+  ),
+  $theme-soft-colors
+);
+
+
+
+// The contrast ratio to reach against white, to determine if color changes from "light" to "dark". Acceptable values for WCAG 2.0 are 3, 4.5 and 7.
+// See https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast
+$min-contrast-ratio: 2 !default;
+
+// Body
+//
+// Settings for the `<body>` element.
+$body-bg: $gray-100;
+$body-color: $gray-500;
+$text-muted: $gray-500 !default;
+
+// Typography
+// Font, line-height, and color for body text, headings, and more.
+// stylelint-disable value-keyword-case
+$font-family-sans-serif: "Inter", "sans-serif" !default;
+$font-family-base: $font-family-sans-serif !default;
+$font-family-heading: $font-family-sans-serif;
+// $font-size-base: 0.875rem !default;
+
+// Font Weight
+$font-weight-thin: 100 !default;
+$font-weight-lighter: 200 !default;
+$font-weight-light: 300 !default;
+$font-weight-normal: 400 !default;
+$font-weight-medium: 500 !default;
+$font-weight-semi-bold: 600 !default;
+$font-weight-bold: 700 !default;
+$font-weight-bolder: 800 !default;
+$font-weight-base: $font-weight-normal !default;
+
+// Links
+// Style anchor elements.
+$link-color: $primary !default;
+$link-decoration: none !default;
+
+// Responsive Font Size
+$enable-rfs: false !default;
+
+// Typography
+$h1-font-size: 2rem !default;
+$h2-font-size: 1.5rem !default;
+$h3-font-size: 1.25rem !default;
+$h4-font-size: 1rem !default;
+$h5-font-size: 0.875rem !default;
+$h6-font-size: 0.75rem !default;
+
+// scss-docs-start font-sizes
+$font-sizes: (
+  1: 3rem,
+  2: 2.5rem,
+  3: 1.25rem,
+  4: 1rem,
+  5: 0.875rem,
+  6: 0.75rem,
+) !default;
+
+// scss-docs-start headings-variables
+$headings-font-family: $font-family-heading !default;
+$headings-font-weight: 600 !default;
+$headings-line-height: 1.5 !default;
+// $headings-color: $gray-800 !default;
+$headings-color: var(--#{$prefix}headings-color) !default;
+
+// scss-docs-start display-headings
+$display-font-sizes: (
+  1: 4.5rem,
+  2: 3.5rem,
+  3: 3rem,
+  4: 2.5rem,
+  5: 2rem,
+  6: 1.5rem,
+) !default;
+
+$display-font-weight: 600 !default;
+$display-line-height: 1.2 !default;
+// scss-docs-end display-headings
+
+$lead-font-size: 1.25rem !default;
+$lead-font-weight: 500 !default;
+
+
+
+// Input
+$input-btn-padding-y: 0.5rem !default;
+$input-btn-padding-x: 1rem !default;
+$input-btn-font-family: null !default;
+$input-btn-font-size: 0.875rem !default;
+$input-btn-padding-y-sm: 0.25rem !default;
+$input-btn-padding-x-sm: 0.75rem !default;
+$input-bg: var(--#{$prefix}input-bg);
+$input-disabled-bg: var(--#{$prefix}input-disabled-bg);
+$input-disabled-border-color: null !default;
+$input-focus-bg: $input-bg !default;
+$input-focus-border-color: var(--#{$prefix}input-focus-border);
+$input-placeholder-color: var(--#{$prefix}input-placeholder-color);
+$input-color: var(--#{$prefix}body-color);
+// $input-border-color: var(--#{$prefix}input-border);
+$input-btn-padding-y-lg: 0.75rem !default;
+$input-btn-padding-x-lg: 1.25rem !default;
+$input-focus-bg: $white !default;
+$input-focus-border-color: $primary !default;
+$input-focus-box-shadow: var(--#{$prefix}input-focus-box-shadow);
+$input-group-addon-bg: $white !default;
+$input-font-size: $h5-font-size !default;
+$input-btn-padding-y-xs: 0.22rem !default;
+$input-btn-padding-x-xs: 0.75rem !default;
+$input-btn-font-size-xs: 0.75rem !default;
+
+
+// $form-text-color: var(--#{$prefix}form-text-color) !default;
+// $form-select-color: $gray-400 !default;
+// $form-select-indicator-color: $gray-400 !default;
+// $form-label-margin-bottom: 0.5rem;
+// $form-label-font-size: null;
+// $form-label-font-style: null;
+// $form-label-font-weight: $font-weight-semi-bold;
+// $form-label-color: var(--#{$prefix}form-label-color);
+// $form-check-input-width: 1.2em;
+// $form-check-input-bg: $input-bg;
+// $form-check-input-border: 1px solid var(--#{$prefix}input-check-border);
+// $form-file-button-hover-bg:        $input-bg;
+
+// Button
+$btn-font-weight: 600 !default;
+
+// Card
+// $card-spacer-y: $spacer * 1.5 !default;
+// $card-spacer-x: $spacer * 1.5 !default;
+// $card-cap-padding-y: 1rem !default;
+// $card-cap-padding-x: $card-spacer-x !default;
+// $card-border-radius: $border-radius-md !default;
+// $card-cap-bg: var(--#{$prefix}card-background) !default;
+// $card-border-color: var(--#{$prefix}border-color) !default;
+$card-bg: $white;
+
+
+
+// Box Shadow
+$box-shadow-sm: 0px 1px 3px rgba(17, 24, 39, 0.09) !default;
+$box-shadow: 0px 3px 6px rgba(17, 24, 39, 0.1) !default;
+$box-shadow-lg: 0 6px 8px 0 rgba(17, 24, 39, 0.08), 0 0 0 1px rgba(17, 24, 39, 0.04) !default;
+
+// Smooth Box Shadow
+$box-shadow-smooth-sm: 0px 2px 4px rgba(0, 0, 20, 0.08), 0px 1px 2px rgba(0, 0, 20, 0.08) !default;
+$box-shadow-smooth-md: 0 1px 2px rgba(21, 30, 40, 0.07), 0 2px 4px rgba(21, 30, 40, 0.07),
+  0 4px 8px rgba(21, 30, 40, 0.07), 0 8px 16px rgba(21, 30, 40, 0.07), 0 16px 32px rgba(21, 30, 40, 0.07),
+  0 32px 64px rgba(21, 30, 40, 0.07) !default;
+$box-shadow-smooth-lg: 0 1px 1px rgba(21, 30, 40, 0.11), 0 2px 2px rgba(21, 30, 40, 0.11),
+  0 4px 4px rgba(21, 30, 40, 0.11), 0 8px 8px rgba(21, 30, 40, 0.11), 0 16px 16px rgba(21, 30, 40, 0.11),
+  0 32px 32px rgba(21, 30, 40, 0.11) !default;
+
+// Hr
+
+$hr-color: var(--#{$prefix}border-color) !default;
+$hr-opacity: 1 !default;
+
+// Modal
+$modal-content-bg: $white;
+
+// scss-docs-start close-variables
+$btn-close-width: 0.75rem !default;
+$btn-close-height: $btn-close-width !default;
+$btn-close-color: $gray-600 !default;
+
+$btn-close-focus-shadow: none;
+
+// letter spacing
+$letter-spacing-sm: -0.04em;
+$letter-spacing-xs: -0.08em;
+$letter-spacing-base: 0em;
+$letter-spacing-md: 0.1em;
+$letter-spacing-lg: 0.15em;
+$letter-spacing-xl: 0.2em;
+$letter-spacing-xxl: 0.25em;
+
+// Tables
+//
+// Customizes the `.table` component with basic values, each used across all table variations.
+
+$table-bg: transparent !default;
+$table-head-color: $gray-700 !default; // ( pending task)
+$table-cell-padding-y: 0.75rem !default;
+$table-cell-padding-x: 1.5rem !default;
+$table-cell-padding-y-sm: 0.3rem !default;
+$table-cell-padding-x-sm: 0.6rem !default;
+$table-cell-padding-y-lg: 1.25rem !default;
+$table-cell-padding-x-lg: 1.5rem !default;
+
+// $table-hover-bg: $gray-100;
+$table-color: var(--#{$prefix}body-color);
+$table-hover-bg-factor: 1;
+$table-hover-bg: var(--#{$prefix}body-bg);
+$table-striped-bg-factor: 1;
+$table-striped-bg: var(--#{$prefix}body-bg);
+
+// table striped
+
+$table-striped-bg-factor: 1 !default;
+$table-striped-bg: rgba($gray-100, $table-striped-bg-factor) !default;
+
+// table active
+$table-active-bg-factor: 1 !default;
+$table-active-bg: var(--#{$prefix}body-bg) !default;
+$table-group-separator-color: $gray-200 !default;
+$table-border-color: var(--#{$prefix}border-color) !default;
+$table-th-font-weight: $font-weight-semi-bold;
+$modal-content-border-color: transparent !default;
+
+// Navbar
+$navbar-light-color: var(--#{$prefix}gray-500);
+$navbar-light-hover-color: var(--#{$prefix}gray-600);
+$navbar-light-active-color: var(--#{$prefix}primary);
+$navbar-light-disabled-color: var(--#{$prefix}gray-400);
+
+
+@import 'bootstrap/scss/bootstrap.scss';
+@import 'navbar';
