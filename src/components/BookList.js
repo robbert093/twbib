@@ -133,6 +133,13 @@ function BookList({props}) {
             'onDelete': handleDelete,
           }}/>
         ))}
+        {
+          filteredBooks.length === 0 &&
+          <div className="empty-list text-center py-5 my-5">
+            <h2>No books found.</h2>
+            <h5>Click on "Add new" button to add a new book.</h5>
+          </div>
+        }
       </div>
       <Modal title="Add new book" show={showModal} handleClose={toggleModal}>
         <BookForm props={props}></BookForm>

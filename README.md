@@ -25,23 +25,13 @@ the resources.
 # Switch to project directory
 cd twbib
 
-# Install server dependencies
-cd server
+# Install dependencies
 npm install
-npm start
-
-# Install client dependencies
-cd client
-npm install
-npm start
 
 # Start the app
 - In development mode, run the following from two separate terminal windows/tabs
-cd server
-npm run dev
-
-cd client
-npm start
+npm run start:server
+npm run start:client
 
 navigate to http://localhost:4000 in your browser
 ```
